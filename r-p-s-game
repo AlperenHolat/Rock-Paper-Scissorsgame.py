@@ -1,0 +1,55 @@
+#Imported the random library
+import random
+
+#Added the code to create a list containing the three actions of the game.
+action_list = ['rock', 'paper', 'scissors']
+
+#Added the code to set the scores of players to 0
+player1_score = 0
+player2_score = 0
+
+#Added the code to ask the user how many rounds they want to play
+total_round = input("How many rounds do you want to play? ")
+
+#Writed a for loop and put the game inside
+for i in range(int(total_round)):
+
+  #Added the code to select a random action for each player
+  player1_choice = random.choice(action_list)
+  player2_choice = random.choice(action_list)
+
+  #Added the code to print the players choices
+  print("Player1:", player1_choice)
+  print("Player2:", player2_choice)
+
+  #Added the tie condition
+  if player1_choice == player2_choice:
+    print("Tie! Both player chose same action.")
+
+  #Added the remaining condition
+  elif player1_choice == 'paper':
+    if player2_choice == 'rock':
+      print("Winner is: Player 1")
+      player1_score +=1
+    else:
+      print("Winner is: Player 2")
+      player2_score +=1
+
+  elif player1_choice == 'rock':
+    if player2_choice == 'paper':
+      print("Winner is: Player 2")
+      player2_score +=1
+    else:
+      print("Winner is: Player 1")
+      player1_score +=1
+
+  elif player1_choice == 'scissors':
+    if player2_choice == 'paper':
+      print("Winner is: Player 1")
+      player1_score +=1
+    else:
+      print("Winner is: Player 2")
+      player2_score +=1
+
+  #printed the score
+  print("Score:", "Player1 =",player1_score, "Player2 =",player2_score)
